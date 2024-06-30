@@ -54,7 +54,7 @@ class RedisClient extends EventEmitter
     /** @var array<string,bool> */
     private $psubscribed = [];
 
-    public function __construct(string $url, ConnectorInterface $connector = null)
+    public function __construct(string $url, ?ConnectorInterface $connector = null)
     {
         $args = [];
         \parse_str((string) \parse_url($url, \PHP_URL_QUERY), $args);
