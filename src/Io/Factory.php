@@ -27,7 +27,7 @@ class Factory
      * @param ?ConnectorInterface $connector
      * @param ?ProtocolFactory $protocol
      */
-    public function __construct(ConnectorInterface $connector = null, ProtocolFactory $protocol = null)
+    public function __construct(?ConnectorInterface $connector = null, ?ProtocolFactory $protocol = null)
     {
         $this->connector = $connector ?: new Connector();
         $this->protocol = $protocol ?: new ProtocolFactory();
