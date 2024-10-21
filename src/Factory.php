@@ -105,7 +105,7 @@ class Factory
         $pass = isset($args['password']) ? $args['password'] : (isset($parts['pass']) ? rawurldecode($parts['pass']) : null);
         if (isset($args['password']) || isset($parts['pass'])) {
             $pass = isset($args['password']) ? $args['password'] : rawurldecode($parts['pass']);
-            $promise = $promise->then(function (StreamingClient $redis) use ($pass, $uri) {
+            $promise = $promise->then(function (StreamingClient $redis) use ($pass, $uri, $args) {
                 $promise = empty($args['username'])
                     ? $redis->auth($pass)
                     : $redis->auth($args['username'], $pass);
